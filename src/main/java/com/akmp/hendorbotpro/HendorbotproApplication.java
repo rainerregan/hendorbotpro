@@ -109,7 +109,7 @@ public class HendorbotproApplication {
 						jawaban = BasicFunctions.getRandomJawaban();
 						break;
 					case "mau":
-						if(pesanSplitWithCommands[1].substring(pesanSplitWithCommands[1].length()-1).equals("?")){
+						if(pesanSplitWithCommands[1].endsWith("?")){
 							jawaban = BasicFunctions.getRandomJawaban();
 						}
 						break;
