@@ -19,4 +19,19 @@ public class BasicFunctions {
         return jawaban;
     }
 
+    /**
+     * Get Pilihan
+     *
+     * mendapatkan pilihan dari command pilih
+     * @param pilihan
+     * @return
+     */
+    public static String getPilihan(String pilihan){
+        String pilihan_list[] = pilihan.split("atau");
+
+        String randomJawaban = pilihan_list[new Random().nextInt(pilihan_list.length)];
+
+        return randomJawaban;
+    }
+
 }

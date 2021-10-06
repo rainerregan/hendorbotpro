@@ -11,7 +11,19 @@ import java.util.List;
 class Settings {
     public static final char BOT_PREFIX = '!';
     public static final List<String> BOT_COMMANDS_LIST = Arrays.asList(
-        "apakah",
-        "mau"
+            "apakah",
+            "mau",
+            "!lirik",
+            "!hitung",
+            "!wiki",
+            "!t",
+            "!translate",
+            "!leave",
+            "!joged",
+            "!roll",
+            "!cocok gak?",
+            "!stats",
+            "!about",
+            "!pilih"
     );
 }

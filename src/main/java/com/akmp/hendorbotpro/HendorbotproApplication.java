@@ -58,7 +58,7 @@ public class HendorbotproApplication {
 		 *
 		 * array(command, isi pesan)
 		 */
-		String[] pesanSplitWithCommands = (pesan.hasDefaultPrefixSet()) ? pesan.getPesanSplitCommands(pesan.getPesanWithoutPrefix()): pesan.getPesanSplitCommands(pesan.getPesan());
+		String[] pesanSplitWithCommands = pesan.getPesanSplitCommands(pesan.getPesan());
 
 //		System.out.println("Pesan: " + pesanSplitWithCommands[0] + "," + pesanSplitWithCommands[1]);
 
@@ -112,6 +112,9 @@ public class HendorbotproApplication {
 						if(pesanSplitWithCommands[1].endsWith("?")){
 							jawaban = BasicFunctions.getRandomJawaban();
 						}
+						break;
+					case "!pilih":
+							jawaban = BasicFunctions.getPilihan(pesanSplitWithCommands[1]);
 						break;
 				}
 			}
