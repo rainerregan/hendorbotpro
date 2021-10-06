@@ -60,7 +60,7 @@ public class HendorbotproApplication {
 		 */
 		String[] pesanSplitWithCommands = pesan.getPesanSplitCommands(pesan.getPesan());
 
-		System.out.println("Pesan: " + pesanSplitWithCommands[0] + "," + pesanSplitWithCommands[1]);
+//		System.out.println("Pesan: " + pesanSplitWithCommands[0] + "," + pesanSplitWithCommands[1]);
 
 		/**
 		 * Mendapatkan jawaban yang sesuai dengan command
