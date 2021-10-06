@@ -91,36 +91,36 @@ public class HendorbotproApplication {
 		String jawaban = null;
 
 		/**
-		 * Jika ada command
+		 * Jika commands valid
 		 */
-		if(pesanSplitWithCommands.length > 1){
-
-			/**
-			 * Jika commands valid
-			 */
-			if(Settings.BOT_COMMANDS_LIST.contains(pesanSplitWithCommands[0])){
+		if(Settings.BOT_COMMANDS_LIST.contains(pesanSplitWithCommands[0])){
 //				System.out.println("Command: " + pesanSplitWithCommands[0]);
 
-				switch (pesanSplitWithCommands[0]){
-					/**
-					 * APAKAH
-					 */
-					case "apakah":
+			switch (pesanSplitWithCommands[0]){
+				/**
+				 * APAKAH
+				 */
+				case "apakah":
+					if(pesanSplitWithCommands.length > 1) {
 						jawaban = BasicFunctions.getRandomJawaban();
-						break;
-					case "mau":
-						if(pesanSplitWithCommands[1].endsWith("?")){
+					}
+					break;
+				case "mau":
+					if(pesanSplitWithCommands.length > 1) {
+						if (pesanSplitWithCommands[1].endsWith("?")) {
 							jawaban = BasicFunctions.getRandomJawaban();
 						}
-						break;
-					case "!pilih":
-							jawaban = BasicFunctions.getPilihan(pesanSplitWithCommands[1]);
-						break;
-					case "!help":
-					case "!commands":
-						jawaban = BasicFunctions.getCommands();
-						break;
-				}
+					}
+					break;
+				case "!pilih":
+					if(pesanSplitWithCommands.length > 1) {
+						jawaban = BasicFunctions.getPilihan(pesanSplitWithCommands[1]);
+					}
+					break;
+				case "!help":
+				case "!commands":
+					jawaban = BasicFunctions.getCommands();
+					break;
 			}
 		}
 
