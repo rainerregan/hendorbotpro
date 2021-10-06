@@ -60,7 +60,7 @@ public class HendorbotproApplication {
 		 */
 		String[] pesanSplitWithCommands = (pesan.hasDefaultPrefixSet()) ? pesan.getPesanSplitCommands(pesan.getPesanWithoutPrefix()): pesan.getPesanSplitCommands(pesan.getPesan());
 
-		System.out.println("Pesan: " + pesanSplitWithCommands);
+		System.out.println("Pesan: " + pesanSplitWithCommands[0] + "," + pesanSplitWithCommands[1]);
 
 		/**
 		 * Mendapatkan jawaban yang sesuai dengan command
@@ -90,6 +90,7 @@ public class HendorbotproApplication {
 		 */
 		if(pesanSplitWithCommands.length > 1){
 			if(Settings.BOT_COMMANDS_LIST.contains(pesanSplitWithCommands[0])){
+				System.out.println("Command: " + pesanSplitWithCommands[0]);
 				switch (pesanSplitWithCommands[0]){
 					case "apakah":
 						jawaban = BasicFunctions.getRandomJawaban();
