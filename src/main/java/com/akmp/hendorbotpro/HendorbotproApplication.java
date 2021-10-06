@@ -60,6 +60,8 @@ public class HendorbotproApplication {
 		 */
 		String[] pesanSplitWithCommands = (pesan.hasDefaultPrefixSet()) ? pesan.getPesanSplitCommands(pesan.getPesanWithoutPrefix()): pesan.getPesanSplitCommands(pesan.getPesan());
 
+		System.out.println("Pesan: " + pesanSplitWithCommands);
+
 		/**
 		 * Mendapatkan jawaban yang sesuai dengan command
 		 */
