@@ -24,6 +24,8 @@ class Settings {
             "!cocok gak?",
             "!stats",
             "!about",
-            "!pilih"
+            "!pilih",
+            "!commands",
+            "!help"
     );
 }

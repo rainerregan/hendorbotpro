@@ -116,6 +116,10 @@ public class HendorbotproApplication {
 					case "!pilih":
 							jawaban = BasicFunctions.getPilihan(pesanSplitWithCommands[1]);
 						break;
+					case "!help":
+					case "!commands":
+						jawaban = BasicFunctions.getCommands();
+						break;
 				}
 			}
 		}
