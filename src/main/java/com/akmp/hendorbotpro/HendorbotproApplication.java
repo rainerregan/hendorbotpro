@@ -60,7 +60,7 @@ public class HendorbotproApplication {
 		 */
 		String[] pesanSplitWithCommands = (pesan.hasDefaultPrefixSet()) ? pesan.getPesanSplitCommands(pesan.getPesanWithoutPrefix()): pesan.getPesanSplitCommands(pesan.getPesan());
 
-		System.out.println("Pesan: " + pesanSplitWithCommands[0] + "," + pesanSplitWithCommands[1]);
+//		System.out.println("Pesan: " + pesanSplitWithCommands[0] + "," + pesanSplitWithCommands[1]);
 
 		/**
 		 * Mendapatkan jawaban yang sesuai dengan command
@@ -68,12 +68,17 @@ public class HendorbotproApplication {
 		String jawabanReply = returnJawaban(pesanSplitWithCommands);
 
 		/**
-		 * Membalas pesan
+		 * Jika ada reply
 		 */
-		balasPesan(
-				messageEvent.getReplyToken(),
-				jawabanReply
-			);
+		if(jawabanReply != null){
+			/**
+			 * Membalas pesan
+			 */
+			balasPesan(
+					messageEvent.getReplyToken(),
+					jawabanReply
+				);
+		}
 
 	}
 
@@ -89,11 +94,24 @@ public class HendorbotproApplication {
 		 * Jika ada command
 		 */
 		if(pesanSplitWithCommands.length > 1){
+
+			/**
+			 * Jika commands valid
+			 */
 			if(Settings.BOT_COMMANDS_LIST.contains(pesanSplitWithCommands[0])){
-				System.out.println("Command: " + pesanSplitWithCommands[0]);
+//				System.out.println("Command: " + pesanSplitWithCommands[0]);
+
 				switch (pesanSplitWithCommands[0]){
+					/**
+					 * APAKAH
+					 */
 					case "apakah":
 						jawaban = BasicFunctions.getRandomJawaban();
+						break;
+					case "mau":
+						if(pesanSplitWithCommands[1].substring(pesanSplitWithCommands[1].length()).equals("?")){
+							jawaban = BasicFunctions.getRandomJawaban();
+						}
 						break;
 				}
 			}
