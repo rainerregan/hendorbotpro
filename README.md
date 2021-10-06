@@ -14,3 +14,7 @@ ID LINE : ``@814wlvad``
 - mau ... ?
 - !help | !commands
 - !pilih ... atau ... atau ... atau(n)
+
+## Cara contribute
+- Fork repo, clone di local, lakukan perubahan pada src/main/java/com/akmp/hendorbotpro/ (Berisi functions untuk reply pesan)
+- Request pull
