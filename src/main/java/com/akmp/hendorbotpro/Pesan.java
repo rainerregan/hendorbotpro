@@ -50,7 +50,7 @@ public class Pesan{
      * @return
      */
     public String[] getPesanSplitCommands(String pesan){
-        return this.pesan.split(pesan, 2);
+        return this.pesan.split(" ", 2);
     }
 
     /**
